@@ -1,0 +1,756 @@
+/* 自定义图标 */
+@font-face {
+    font-family: 'icon';
+    src: url('../fonts/font/fontello.eot?13188859');
+    src: url('../fonts/font/fontello.eot?13188859#iefix') format('embedded-opentype'),
+        url('../fonts/font/fontello.woff?13188859') format('woff'),
+        url('../fonts/font/fontello.ttf?13188859') format('truetype'),
+        url('../fonts/font/fontello.svg?13188859#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: "icon";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .5em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+
+html,
+body {
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #F6F6F3;
+    color: #444;
+    font-size: 1em;
+    line-height: 1.5;
+    height: 100%;
+    overflow: hidden;
+}
+
+ul,
+ul li {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* 登陆界面 */
+
+.login-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.login-content {
+    background-color: white;
+    padding: 0px 50px 20px;
+    box-shadow: 5px 6px 20px 5px rgba(0, 63, 163, .1);
+    border-radius: 15px;
+}
+
+.login-wrap h1 {
+    text-align: center;
+}
+
+.login-wrap .login-logo {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background: url(../img/logo.svg) no-repeat;
+    text-indent: -9999em;
+    background-size: contain;
+}
+
+.login-wrap label {
+    display: block;
+    width: 300px;
+    border: 1px solid #DCDFE6;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+.login-wrap .login-input {
+    border: none;
+    background: white;
+    outline: none;
+    box-sizing: border-box;
+    color: #606266 !important;
+    padding: 0;
+    margin: 0 8px;
+}
+
+.login-wrap .login-btn {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    color: #FFF;
+    background-color: #409EFF;
+    border-color: #409EFF;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-wrap .login-btn:hover {
+    opacity: .8;
+}
+
+.login-wrap .reg {
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .login-content {
+        padding: 0px 20px 10px;
+    }
+
+    .login-wrap label {
+        padding: 10px;
+        width: 250px;
+    }
+
+    .login-wrap .login-input {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .login-content {
+        padding: 0px 20px 10px;
+    }
+
+    .login-wrap label {
+        padding: 10px;
+        width: 200px;
+    }
+}
+
+/* 后台管理 ************************** */
+.html {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 侧栏 */
+.sidebar {
+    width: 200px;
+    min-height: 100%;
+    background-color: #20222A;
+    box-sizing: border-box;
+}
+
+.sidebar .logo {
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    border-bottom: rgb(26, 27, 34) 1px solid;
+}
+
+.sidebar .logo h2 {
+    margin: 0;
+}
+
+.sidebar .menu {
+    margin-top: 20px;
+}
+
+
+.sidebar .root .parent {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .root .parent a {
+    flex: 1;
+}
+
+.sidebar .root .parent i {
+    color: #909399;
+}
+
+.sidebar .root li:hover {
+    background-color: rgb(26, 27, 34);
+}
+
+.sidebar .root a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sidebar .root .child {
+    display: none;
+
+}
+
+.sidebar .root .child li {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.sidebar .root .child li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar .root.focus .child {
+    display: block;
+}
+
+.sidebar .root .focus a {
+    color: rgb(255, 208, 75);
+}
+
+
+
+/* 导航栏 */
+.nav {
+    background-color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+    flex-shrink: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgba(3, 3, 3, .5);
+}
+
+.nav i {
+    font-size: 1.5em;
+    color: rgba(3, 3, 3, .5);
+}
+
+.nav .nav-menu {
+    flex: 1;
+}
+
+.nav .operate {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav .operate a {
+    display: block;
+    margin: 0px 10px;
+    height: 100%;
+    line-height: 100%;
+}
+
+/* 操作区 */
+.wrap {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background: #f2f2f2;
+}
+
+.main {
+    flex: 1;
+    display: block;
+    flex-basis: auto;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.body .title {
+    background-color: #FFF;
+    box-shadow: #ccc 1px 1px 1px;
+    padding: 10px 0px;
+    margin: 10px;
+    box-sizing: border-box;
+
+}
+
+.body .title h2 {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+.main a {
+    text-decoration: none;
+    color: rgba(3, 3, 3, .5);
+}
+
+.main .row {
+    width: 100%;
+}
+
+.main .card {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: #ccc 1px 1px 1px;
+    margin: 10px;
+}
+
+.main .card .card-header {
+    padding: 8px;
+    border-bottom: 1px solid #EBEEF5;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.main .card button {
+    position: relative;
+    border: none;
+    background-color: #409EFF;
+    padding: 8px 15px;
+    color: #FFF;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.main .card .card-body {
+    padding: 10px;
+    min-height: 220px;
+}
+
+/*网站概要*/
+.dashboard {
+    padding: 10px;
+}
+
+.dashboard .total .num {
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    color: #999;
+    border-radius: 2px;
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+.dashboard .total h3 {
+    font-weight: 400;
+    padding-bottom: 10px;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dashboard .total span {
+    margin: 0;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 400;
+    color: #009688;
+}
+
+/**快捷**/
+.dashboard .shortcut a {
+    display: block;
+    padding: 10px 15px;
+    color: #999;
+    border-radius: 2px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.dashboard .shortcut a i {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 30px;
+    background-color: #F8F8F8;
+    color: #333;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.dashboard .shortcut cite {
+    position: relative;
+    top: 2px;
+    display: block;
+    color: #666;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    font-style: normal;
+    text-align: center;
+}
+
+/**最新文章**/
+.dashboard .latest-post ul {
+    padding: 0;
+}
+
+.dashboard .latest-post li {
+    margin: 10px 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.dashboard .latest-post a {
+    color: rgb(1, 171, 239);
+}
+
+.dashboard .latest-post a:hover {
+    color: rgba(1, 171, 239, .7);
+}
+
+.dashboard .latest-post span {
+    margin-right: 5px;
+}
+
+.blank {
+    width: 100%;
+    margin-top: 100px;
+    color: #ccc;
+    text-align: center;
+}
+
+/**个人设置**/
+.profile .card {
+    min-height: 400px;
+}
+
+.profile .info .card-body {
+    display: flex;
+
+}
+
+.profile .info .avatar {
+    width: 120px;
+    text-align: center;
+}
+
+.profile .info .avatar img {
+    width: 100%;
+    border: 1px #ccc solid;
+}
+
+.profile .info .more {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.profile .info .more ul {
+    border: 1px solid #eee;
+}
+
+.profile .info .more li {
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px #eee solid;
+
+}
+
+.typecho-option {
+    color: #666666;
+}
+
+.typecho-option li {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.typecho-option li>label.typecho-label {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    width: 20%;
+    height: 38px;
+    line-height: 38px;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+    margin: 0px;
+    padding: 0px 10px;
+}
+
+.typecho-option li>span {
+    line-height: 38px;
+}
+
+.setting .typecho-option label.typecho-label {
+    width: 100%;
+    text-align: left;
+}
+
+.profile .typecho-option li>input {
+    display: block;
+    width: 80%;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px #e6e6e6 solid;
+    border-radius: 2px;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.typecho-option li span {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+    margin-left: 20% !important;
+}
+
+.typecho-page-main .typecho-option input.text {
+    width: 80%;
+}
+
+.typecho-option .description {
+    float: right;
+    width: 80%;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: rgb(243, 243, 243);
+    padding: 8px 15px;
+    box-sizing: border-box;
+}
+
+.setting .typecho-option .description {
+    width: 100%;
+}
+
+
+.typecho-option button {
+    float: right;
+}
+
+@media(max-width:768px) {
+
+    .typecho-option li label,
+    .typecho-option li input,
+    .typecho-option .description {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0px;
+    }
+}
+
+/*备份*/
+#backup .typecho-option .description {
+    width: 100%;
+
+}
+
+#backup label.backup-upload-file {
+    width: 200px;
+    display: block;
+    background-color: #409EFF;
+    color: #FFF;
+    margin: 0px auto;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+#backup #backup-upload-file {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#typecho-welcome {
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*写文章*/
+.write-post .row {
+    padding: 10px;
+}
+
+.write-post .edit-panel {
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: #ccc 1px 1px 1px;
+    min-height: 700px;
+}
+
+.write-post .post-title input {
+    background: none;
+    box-sizing: border-box;
+    width: 100%;
+    border: #eee 1px solid;
+    outline: none;
+    padding: 10px 15px;
+}
+
+#edit-secondary {
+    padding-left: 15px;
+
+}
+
+#edit-secondary .wrap {
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: #ccc 1px 1px 1px;
+    min-height: 700px;
+}
+
+#edit-secondary label {
+    margin: 10px 0px;
+}
+
+#btn-submit,
+.btn.primary {
+    background-color: #409EFF;
+    color: #ffffff;
+    border: 1px solid #409EFF;
+}
+
+.btn {
+    background: #ffffff;
+    color: #333333;
+    border: 1px solid #eee;
+}
+
+.btn:hover {
+    background-color: #409EFF;
+    color: #ffffff;
+    border: 1px solid #409EFF;
+}
+
+.wmd-edittab a.active {
+    background: rgb(255, 208, 75);
+    color: #FFF;
+}
+
+#edit-secondary .mono.url-slug {
+    margin-top: 0;
+    font-size: 12px;
+    margin: 10px 5px;
+}
+
+#edit-secondary textarea {
+    min-height: 400px;
+}
+
+.typecho-list-table textarea {
+    resize: none;
+    width: 100%;
+    height: 80px;
+    line-height: 20px;
+    outline: none;
+}
+
+/*文章列表*/
+
+.manage-posts a.commentsNum,
+.manage-posts a.commentsNum:hover {
+    background: none;
+    color: rgba(3, 3, 3, .5);
+}
+
+.manage-posts a.edit-btn {
+    padding: 7px 10px;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #909399;
+}
+
+.manage-posts a.view-btn {
+    padding: 7px 10px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #67C23A;
+}
+
+.manage-posts a.edit-btn:hover,
+.manage-posts a.view-btn:hover {
+    opacity: .8;
+
+}
+
+/* 基本设置*/
+#Widget_Options_General .typecho-option .w-100 {
+    width: 80%;
+}
+
+#Widget_Options_General #typecho-option-item-attachmentTypes-7 span {
+    display: block;
+    margin-left: 20%;
+}
+
+/**分类**/
+.row.typecho-page-main {
+    width: auto;
+    background-color: #FFF;
+    box-shadow: #ccc 1px 1px 1px;
+    padding: 10px 0px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.row.typecho-page-main textarea {
+    width: 80%;
+}
+
+.row.typecho-page-main .clearfix {
+    padding: 10px 20px;
+}
+
+/**标签页**/
+
+
+#addTags .typecho-option{
+    padding: 20px;
+
+}
+#addTags .typecho-option label{
+    width: 10%;
+}
+#addTags .description{
+    float: left;
+}
+
+/**阅读设置**/
