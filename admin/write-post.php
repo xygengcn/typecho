@@ -188,8 +188,7 @@ $input = '<input type="text" id="slug" name="slug" autocomplete="off" value="' .
                             <section class="typecho-post-option">
                                 <p class="description">
                                     <br>&mdash;<br>
-                                    <?php _e('本文由 <a href="%s">%s</a> 撰写',
-    Typecho_Common::url('manage-posts.php?uid=' . $post->author->uid, $options->adminUrl), $post->author->screenName);?><br>
+                                    <?php _e('本文由 <a href="%s">%s</a> 撰写',Typecho_Common::url('manage-posts.php?uid=' . $post->author->uid, $options->adminUrl), $post->author->screenName);?><br>
                                     <?php _e('最后更新于 %s', $modified->word());?>
                                 </p>
                             </section>

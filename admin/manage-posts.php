@@ -25,11 +25,9 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                     </ul>
                     <ul class="typecho-option-tabs">
                         <li<?php if (!isset($request->status) || 'all' == $request->get('status')): ?> class="current"
-                            <?php endif;?>><a href="<?php $options->adminUrl('manage-posts.php'
-    . (isset($request->uid) ? '?uid=' . $request->uid : ''));?>"><?php _e('可用');?></a></li>
+                            <?php endif;?>><a href="<?php $options->adminUrl('manage-posts.php'.(isset($request->uid) ? '?uid=' . $request->uid : ''));?>"><?php _e('可用');?></a></li>
                             <li<?php if ('waiting' == $request->get('status')): ?> class="current" <?php endif;?>><a
-                                    href="<?php $options->adminUrl('manage-posts.php?status=waiting'
-    . (isset($request->uid) ? '&uid=' . $request->uid : ''));?>"><?php _e('待审核');?>
+                                    href="<?php $options->adminUrl('manage-posts.php?status=waiting'.(isset($request->uid) ? '&uid=' . $request->uid : ''));?>"><?php _e('待审核');?>
                                     <?php if (!$isAllPosts && $stat->myWaitingPostsNum > 0 && !isset($request->uid)): ?>
                                     <span class="balloon"><?php $stat->myWaitingPostsNum();?></span>
                                     <?php elseif ($isAllPosts && $stat->waitingPostsNum > 0 && !isset($request->uid)): ?>
@@ -39,8 +37,7 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                                     <?php endif;?>
                                 </a></li>
                                 <li<?php if ('draft' == $request->get('status')): ?> class="current" <?php endif;?>><a
-                                        href="<?php $options->adminUrl('manage-posts.php?status=draft'
-    . (isset($request->uid) ? '&uid=' . $request->uid : ''));?>"><?php _e('草稿');?>
+                                        href="<?php $options->adminUrl('manage-posts.php?status=draft'. (isset($request->uid) ? '&uid=' . $request->uid : ''));?>"><?php _e('草稿');?>
                                         <?php if (!$isAllPosts && $stat->myDraftPostsNum > 0 && !isset($request->uid)): ?>
                                         <span class="balloon"><?php $stat->myDraftPostsNum();?></span>
                                         <?php elseif ($isAllPosts && $stat->draftPostsNum > 0 && !isset($request->uid)): ?>
@@ -70,14 +67,12 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                         </div>
                         <div class="search" role="search">
                             <?php if ('' != $request->keywords || '' != $request->category): ?>
-                            <a
-                                href="<?php $options->adminUrl('manage-posts.php'
-    . (isset($request->status) || isset($request->uid) ? '?' .
+                            <a href="<?php $options->adminUrl('manage-posts.php'. (isset($request->status) || isset($request->uid) ? '?' .
         (isset($request->status) ? 'status=' . htmlspecialchars($request->get('status')) : '') .
         (isset($request->uid) ? '?uid=' . htmlspecialchars($request->get('uid')) : '') : ''));?>"><?php _e('&laquo; 取消筛选');?></a>
                             <?php endif;?>
                             <input type="text" class="text-s" placeholder="<?php _e('请输入关键字');?>"
-                                value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" />
+                                value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" autocomplete="off"/>
                             <select name="category">
                                 <option value=""><?php _e('所有分类');?></option>
                                 <?php Typecho_Widget::widget('Widget_Metas_Category_List')->to($category);?>
@@ -105,23 +100,25 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                         <table class="typecho-list-table">
                             <colgroup>
                                 <col width="20" />
-                                <col width="6%" />
                                 <col width="" />
                                 <col width="10%" />
                                 <col width="10%" />
                                 <col width="15%" />
                                 <col width="10%" />
-                                <col width="10%" />
+                                <col width="6%" />
+                                <col width="6%" />
+                                <col width="133" />
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th><?php _e('评论');?></th>
                                     <th><?php _e('标题');?></th>
                                     <th><?php _e('作者');?></th>
                                     <th><?php _e('分类');?></th>
                                     <th><?php _e('日期');?></th>
                                     <th><?php _e('状态');?></th>
+                                    <th><?php _e('评论'); ?></th>
+                                    <th><?php _e('浏览'); ?></th>
                                     <th><?php _e('操作');?></th>
                                 </tr>
                             </thead>
@@ -130,10 +127,7 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                                 <?php while ($posts->next()): ?>
                                 <tr id="<?php $posts->theId();?>">
                                     <td><input type="checkbox" value="<?php $posts->cid();?>" name="cid[]" /></td>
-                                    <td><a href="<?php $options->adminUrl('manage-comments.php?cid=' . ($posts->parentId ? $posts->parentId : $posts->cid));?>"
-                                            class="commentsNum balloon-button size-<?php echo Typecho_Common::splitByCount($posts->commentsNum, 1, 10, 20, 50, 100); ?>"
-                                            title="<?php $posts->commentsNum();?> <?php _e('评论');?>"><?php $posts->commentsNum();?></a>
-                                    </td>
+                                    
                                     <td>
                                         <a
                                             href="<?php $options->adminUrl('write-post.php?cid=' . $posts->cid);?>"><?php $posts->title();?></a>
@@ -168,6 +162,11 @@ $isAllPosts = ('on' == $request->get('__typecho_all_posts') || 'on' == Typecho_C
                                         <?php else:echo '<em class="status">' . _t('正常') . '</em>';?>
                                         <?php endif;?>
                                     </td>
+                                    <td><a href="<?php $options->adminUrl('manage-comments.php?cid=' . ($posts->parentId ? $posts->parentId : $posts->cid));?>"
+                                            class="commentsNum balloon-button size-<?php echo Typecho_Common::splitByCount($posts->commentsNum, 1, 10, 20, 50, 100); ?>"
+                                            title="<?php $posts->commentsNum();?> <?php _e('评论');?>"><?php $posts->commentsNum();?></a>
+                                    </td>
+                                    <td><?php $posts->views();?></td>
                                     <td>
                                         <a href="<?php $options->adminUrl('write-post.php?cid=' . $posts->cid);?>"
                                             class="edit-btn">编辑</a>

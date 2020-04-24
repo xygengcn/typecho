@@ -49,7 +49,7 @@ $this->need('header.php');
         <div class='navbar'><i class="icon icon-folder-open">&#xe806;</i>最热笔记</div>
         <div class="swiper-container" id="hots">
             <div class="swiper-wrapper">
-                <?php foreach (getHotPosts(5) as $value): ?>
+                <?php foreach (getHotPosts() as $value): ?>
                 <div class="swiper-slide">
                     <div class="swiper-card">
                         <div class="card-img"> <a title="<?php _e($value['title']);?>"

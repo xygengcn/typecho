@@ -685,20 +685,30 @@ div {
 
 /*文章列表*/
 
+.typecho-list-table th{
+    padding: 15px 10px;
+    background-color: #f2f2f2;
+}
+.typecho-list-table{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+}
+
 .manage-posts a.commentsNum,
 .manage-posts a.commentsNum:hover {
     background: none;
     color: rgba(3, 3, 3, .5);
 }
 
-.manage-posts a.edit-btn {
+ a.edit-btn {
     padding: 7px 10px;
     color: #fff;
     border-radius: 2px;
     background-color: #909399;
 }
 
-.manage-posts a.view-btn {
+ a.view-btn {
     padding: 7px 10px;
     border-radius: 2px;
     color: #fff;
@@ -736,7 +746,7 @@ div {
 }
 
 .row.typecho-page-main .clearfix {
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 
 /**标签页**/

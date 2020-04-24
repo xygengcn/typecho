@@ -1,20 +1,28 @@
 # 魔改typecho
 
+大家都知道typecho是开源博客，没有开放商店等功能，相当于没有收入，纯属免费开发，所以开发者也不是更新很频繁，所以有很我们刚需的内容没有添加，现在我就自己添加一些自己喜欢的功能和修改自己喜欢的后台界面，下面会把var核心文件的每一处修改标注，admin文件的修改基本是样式问题，就不具体描述。
 
-添加自己喜欢的样式和功能，下面会把var核心文件的每一处修改标注，admin文件的修改基本是样式问题，就不具体描述。
+### 链接：
 
+1、具体的代码更新请关注我的[GitHub](https://github.com/xygengcn/typecho)
+
+2、原版：[typecho官方源码](https://github.com/typecho/typecho)
+
+3、typecho网站：[点击](http://typecho.org/)
+
+### 图片：
 
 ![截图](screenshot.png)
 
 
-### 修改一
+#### 修改一
 
 根据样式问题删掉部分<br>
 
 >  var/Widget/Users/Profile.php的个人资料删掉<br>
 
 
-### 修改二 （添加置顶文章）
+#### 修改二 （添加置顶文章）
 
 1、在var/Widget/Contents/Post文件夹的Recent.php
 
@@ -86,7 +94,7 @@ $this->db->fetchAll($this->select()
 ```
 
 
-### 修改三 （浏览量）
+#### 修改三 （浏览量）
 
 1、在var/Widget/Abstract/Contents.php 的select()函数添加'table.contents.views'字段
 

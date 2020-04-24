@@ -2,7 +2,6 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) {
     exit;
 }
-require_once 'function.php';
 //编辑文章时显示
 if ($_SERVER['SCRIPT_NAME'] == "/admin/write-post.php") {
     function themeFields($layout)
@@ -14,9 +13,7 @@ if ($_SERVER['SCRIPT_NAME'] == "/admin/write-post.php") {
 
 function themeInit()
 {
-    Typecho_Plugin::factory('Widget_Archive')->___test = ['theme_plugin', 'test'];
 }
-//$this->options->AvatarUrl
 //主题设置面板
 function themeConfig($form)
 {
@@ -71,4 +68,19 @@ function getCover($content, $url)
     }
 
     echo $img;
+}
+
+function Monitor(){
+    $redis = new Redis();
+    $redis->connect('127.0.0.1', 6379);
+    $redis->select(1);
+    //$redis->incr();
+
+    $url = Typecho_Router::getPathInfo();
+
+    $result = $redis->incr($url);
+    $ttl = $redis->ttl($url);
+    if ($ttl <= 0) {
+        $redis->expire($url, 60);
+    }
 }

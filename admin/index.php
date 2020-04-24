@@ -19,18 +19,6 @@ $stat = Typecho_Widget::widget('Widget_Stat');
                             </a>
                         </div>
                         <div class="col-mb-4">
-                            <a href="<?php $options->adminUrl('manage-posts.php');?>">
-                                <i class="icon icon-doc-text">&#xf0f6;</i>
-                                <cite><?php _e('文章管理');?></cite>
-                            </a>
-                        </div>
-                        <div class="col-mb-4">
-                            <a href="<?php $options->adminUrl('manage-pages.php');?>">
-                                <i class="icon icon-menu">&#xf0c9;</i>
-                                <cite><?php _e('页面管理');?></cite>
-                            </a>
-                        </div>
-                        <div class="col-mb-4">
                             <a href="<?php $options->adminUrl('themes.php');?>">
                                 <i class="icon icon-adjust">&#xe80f;</i>
                                 <cite><?php _e('更换外观');?></cite>
@@ -40,6 +28,18 @@ $stat = Typecho_Widget::widget('Widget_Stat');
                             <a href="<?php $options->adminUrl('plugins.php');?>">
                                 <i class="icon icon-puzzle">&#xe80d;</i>
                                 <cite> <?php _e('插件管理');?></cite>
+                            </a>
+                        </div>
+                        <div class="col-mb-4">
+                            <a href="<?php $options->adminUrl('manage-posts.php');?>">
+                                <i class="icon icon-laptop">&#xf109;</i>
+                                <cite><?php _e('公告管理');?></cite>
+                            </a>
+                        </div>
+                        <div class="col-mb-4">
+                            <a href="<?php $options->adminUrl('manage-medias.php');?>">
+                                <i class="icon icon-menu">&#xf0c9;</i>
+                                <cite><?php _e('文件管理');?></cite>
                             </a>
                         </div>
                         <?php if ($user->pass('administrator', true)): ?>
@@ -62,25 +62,33 @@ $stat = Typecho_Widget::widget('Widget_Stat');
                         <div class="col-mb-6">
                             <div class="num">
                                 <h3>文章数量</h3>
-                                <span><?php $stat->myPublishedPostsNum();?></span>
+                                <a href="<?php $options->adminUrl('manage-posts.php');?>">
+                                    <span><?php $stat->myPublishedPostsNum();?></span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-mb-6">
                             <div class="num">
                                 <h3>分类数量</h3>
+                                <a href="<?php $options->adminUrl('manage-categories.php');?>">
                                 <span><?php $stat->categoriesNum()?></span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-mb-6">
                             <div class="num">
                                 <h3>评论数量</h3>
+                                <a href="<?php $options->adminUrl('manage-comments.php');?>">
                                 <span><?php $stat->publishedCommentsNum()?></span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-mb-6">
                             <div class="num">
                                 <h3>页面数量</h3>
+                                <a href="<?php $options->adminUrl('manage-pages.php');?>">
                                 <span><?php $stat->publishedPagesNum()?></span>
+                                </a>
                             </div>
                         </div>
                     </div>
