@@ -1,4 +1,5 @@
 .git
 .idea
 /usr/plugins
+/usr/themes/xygengcn
 config.inc.php
