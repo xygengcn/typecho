@@ -2,6 +2,7 @@
 include 'common.php';
 include 'header.php';
 include 'menu.php';
+include 'functions.php';
 
 $stat = Typecho_Widget::widget('Widget_Stat');
 ?>
@@ -121,7 +122,14 @@ $stat = Typecho_Widget::widget('Widget_Stat');
         <div class="col-mb-12 col-wd-8 col-6">
             <div class="card">
                 <div class="card-header">数据概览</div>
-                <div class="card-body"></div>
+                <div class="card-body" style="overflow:hidden">
+                    <?php if($options->theme=="xygengcn"):?>
+                        <div id="viewDashBoard" style="width:50%;height:350px;float:left;"></div>
+                        <div id="deviceDashBoard" style="width:50%;height:350px;float:left;"></div>
+                    <?php else: ?>
+                        <div class="blank">该主题不符合</div>
+                    <?php endif;?>
+                </div>
             </div>
         </div>
         <div class="col-mb-12 col-wd-4 col-6">
@@ -153,3 +161,4 @@ include 'copyright.php';
 include 'common-js.php';
 ?>
 <?php include 'footer.php';?>
+<script>Monitor();</script> 
