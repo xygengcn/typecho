@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ADMIN__')) {
 ?>
 <div class="sidebar">
     <div class="logo">
-        <h2><i class="icon icon-laptop">&#xf109;</i>管理后台</h2>
+        <a href="<?php $options->adminUrl('index.php');?>"><h2><i class="icon icon-laptop">&#xf109;</i>管理后台</h2></a>
     </div>
     <div class="menu">
     

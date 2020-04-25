@@ -101,7 +101,7 @@ $stat = Typecho_Widget::widget('Widget_Stat');
             <div class="card latest-post">
                 <div class="card-header"><?php _e('最近回复');?></div>
                 <div class="card-body">
-                    <?php Typecho_Widget::widget('Widget_Comments_Recent', 'pageSize=10')->to($comments);?>
+                    <?php Typecho_Widget::widget('Widget_Comments_Recent', 'pageSize=6')->to($comments);?>
                     <?php if ($comments->have()): ?>
                     <ul>
                         <?php while ($comments->next()): ?> 
@@ -119,13 +119,24 @@ $stat = Typecho_Widget::widget('Widget_Stat');
                 </div>
             </div>
         </div>
-        <div class="col-mb-12 col-wd-8 col-6">
+        <div class="col-mb-12 col-wd-4 col-6">
             <div class="card">
                 <div class="card-header">数据概览</div>
                 <div class="card-body" style="overflow:hidden">
                     <?php if($options->theme=="xygengcn"):?>
-                        <div id="viewDashBoard" style="width:50%;height:350px;float:left;"></div>
-                        <div id="deviceDashBoard" style="width:50%;height:350px;float:left;"></div>
+                        <div id="viewDashBoard" style="width:100%;height:300px;"></div>
+                    <?php else: ?>
+                        <div class="blank">该主题不符合</div>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
+        <div class="col-mb-12 col-wd-4 col-6">
+            <div class="card">
+                <div class="card-header">数据概览</div>
+                <div class="card-body" style="overflow:hidden">
+                    <?php if($options->theme=="xygengcn"):?>
+                        <div id="deviceDashBoard" style="width:100%;height:300px; "></div>
                     <?php else: ?>
                         <div class="blank">该主题不符合</div>
                     <?php endif;?>
@@ -136,7 +147,7 @@ $stat = Typecho_Widget::widget('Widget_Stat');
             <div class="card latest-post">
                 <div class="card-header"><?php _e('最近文章');?></div>
                 <div class="card-body">
-                    <?php Typecho_Widget::widget('Widget_Contents_Post_Recent', 'pageSize=5')->to($posts);?>
+                    <?php Typecho_Widget::widget('Widget_Contents_Post_Recent', 'pageSize=6')->to($posts);?>
                     <?php if ($posts->have()): ?>
                     <ul>
                         <?php while ($posts->next()): ?>
