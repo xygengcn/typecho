@@ -30,7 +30,7 @@ input:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
     outline: none;
 }
@@ -354,6 +354,7 @@ div {
 .main .card .card-body {
     padding: 10px;
     min-height: 250px;
+    box-sizing: content-box;
 }
 
 /*网站概要*/
@@ -690,11 +691,12 @@ div {
 
 /*文章列表*/
 
-.typecho-list-table th{
+.typecho-list-table th {
     padding: 15px 10px;
     background-color: #f2f2f2;
 }
-.typecho-list-table{
+
+.typecho-list-table {
     border-width: 1px;
     border-style: solid;
     border-color: #e6e6e6;
@@ -706,14 +708,14 @@ div {
     color: rgba(3, 3, 3, .5);
 }
 
- a.edit-btn {
+a.edit-btn {
     padding: 7px 10px;
     color: #fff;
     border-radius: 2px;
     background-color: #909399;
 }
 
- a.view-btn {
+a.view-btn {
     padding: 7px 10px;
     border-radius: 2px;
     color: #fff;
@@ -721,10 +723,55 @@ div {
 }
 
 .manage-posts a.edit-btn:hover,
-.manage-posts a.view-btn:hover {
+.manage-posts a.view-btn:hover,
+a.btn-opt:hover,
+.typecho-list-operate .btn:hover,
+.typecho-list-operate label span:hover {
     opacity: .8;
 
 }
+
+/*表格管理*/
+.typecho-list-operate{
+    height: 38px;
+    line-height: 38px;
+}
+a.btn-opt,
+.typecho-list-operate label span{
+    cursor: pointer;
+    padding: 0px 10px;
+    height: 38px;
+    display: inline-block;
+    line-height: 38px;
+    margin: 0px 5px;
+    border-radius: 2px;
+    background-color: #409EFF;
+    color: #ffffff;
+}
+.typecho-list-operate .btn.btn-s {
+    height: 38px;
+    line-height: 1.3;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #409EFF;
+    color: #ffffff;
+    border: 1px solid #409EFF;
+    border-radius: 2px;
+}
+.typecho-list-operate input[type="checkbox"] {
+    vertical-align: middle;
+}
+.typecho-list-operate input[type="text"],.typecho-list-operate select{
+    padding-left: 10px;
+    height: 38px;
+    line-height: 1.3;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    outline: none;
+}
+
 
 /* 基本设置*/
 #Widget_Options_General .typecho-option .w-100 {
@@ -748,6 +795,7 @@ div {
 
 .row.typecho-page-main textarea {
     width: 80%;
+    min-height: 250px;
 }
 
 .row.typecho-page-main .clearfix {
@@ -757,14 +805,16 @@ div {
 /**标签页**/
 
 
-#addTags .typecho-option{
+#addTags .typecho-option {
     padding: 20px;
 
 }
-#addTags .typecho-option label{
+
+#addTags .typecho-option label {
     width: 10%;
 }
-#addTags .description{
+
+#addTags .description {
     float: left;
 }
 

@@ -13,20 +13,15 @@ $stat = Typecho_Widget::widget('Widget_Stat');
                 <div class="typecho-list-operate clearfix">
                     <form method="get">
                         <div class="operate">
-                            <label><i class="sr-only"><?php _e('全选'); ?></i><input type="checkbox" class="typecho-table-select-all" /></label>
-                            <div class="btn-group btn-drop">
-                            <button class="btn dropdown-toggle btn-s" type="button"><i class="sr-only"><?php _e('操作'); ?></i><?php _e('选中项'); ?> <i class="i-caret-down"></i></button>
-                            <ul class="dropdown-menu">
-                                <li><a lang="<?php _e('你确认要删除这些页面吗?'); ?>" href="<?php $security->index('/action/contents-page-edit?do=delete'); ?>"><?php _e('删除'); ?></a></li>
-                            </ul>
-                            </div>
+                            <label><input type="checkbox" class="typecho-table-select-all" /><span><?php _e('全选');?></span></label>
+                             <a class="btn-opt" lang="<?php _e('你确认要删除这些文章吗?');?>" href="<?php $security->index('/action/contents-post-edit?do=delete');?>"><?php _e('删除所选');?></a>
                         </div>
 
                         <div class="search" role="search">
                             <?php if ('' != $request->keywords): ?>
                             <a href="<?php $options->adminUrl('manage-pages.php'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
                             <?php endif; ?>
-                            <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" />
+                            <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" autocomplete="off"/>
                             <button type="submit" class="btn btn-s"><?php _e('筛选'); ?></button>
                         </div>
                     </form>
